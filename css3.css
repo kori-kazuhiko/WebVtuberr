@@ -1,0 +1,100 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1c1c1c, #292929);
+    color: #f5f5f5;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 22px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 6px;
+    position: relative;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: #f5b921;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.navbar ul li a.active {
+    color: #f5b921;
+    font-weight: bold;
+}
+
+/* Teks Schedule */
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f5b921;
+    text-shadow: 2px 2px 8px rgba(245, 185, 33, 0.5);
+    animation: fadeInText 1s ease-in-out;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}

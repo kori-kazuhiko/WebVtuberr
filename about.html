@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Kori Kazuhiko</title>
+    <link rel="stylesheet" href="css2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="socials.html">Socials</a></li>
+        </ul>
+    </nav>
+    
+    <section class="about-container">
+        <div class="about-nav">
+            <button class="tab-btn" onclick="showSection('profile')">Profile</button>
+            <button class="tab-btn" onclick="showSection('karakter')">Karakter</button>
+            <button class="tab-btn" onclick="showSection('cerita')">Cerita</button>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile" class="about-section active">
+            <h1>Profile</h1>
+            <div class="profile-content">
+                <p><strong>Nama:</strong> Kori Kazuhiko</p>
+                <p><strong>Usia:</strong> (Tidak diketahui)</p>
+                <p><strong>Pekerjaan:</strong> Penjaga Perpustakaan</p>
+                <p><strong>Kekuatan:</strong> -</p>
+                
+                <h2>Kepribadian</h2>
+                <p>Kori memiliki sikap yang santai dan suka bercanda. Sering terlihat malas dan lebih suka bermalas-malasan daripada mengurus hal-hal serius. Menghindari hubungan sosial karena merasa itu terlalu merepotkan. Walau terlihat santai, ia tetap menyelesaikan pekerjaannya dengan baik tanpa terburu-buru.</p>
+
+                <h2>Tujuan Hidup</h2>
+                <p>Menghindari segala hal yang merepotkan, termasuk interaksi sosial, dan menjalani hidup dengan cara yang paling santai dan sederhana.</p>
+            </div>
+        </div>
+
+        <!-- Karakter Section -->
+        <div id="karakter" class="about-section">
+            <h1>Karakter</h1>
+            <div class="character-gallery">
+                <img src="l2d1.jpg" alt="Live2D Kori Kazuhiko 1">
+                <p>Penampilan pertama Kori Kazuhiko dalam mode santai.</p>
+                <img src="l2d2.jpg" alt="Live2D Kori Kazuhiko 2">
+                <p>Penampilan Kori saat memasuki mode akademi</p>
+            </div>
+        </div>
+
+        <!-- Cerita Section -->
+        <div id="cerita" class="about-section">
+            <p><em>Di antara halaman-halaman buku yang sunyi, ada lebih banyak yang tersembunyi daripada yang terlihat. Halo, aku Kori Kazuhiko, seorang petugas perpustakaan biasa… atau mungkin ada sesuatu yang lebih? Jika kamu mencari jawaban, kamu mungkin sudah terlalu dalam. Selamat datang, dan semoga rahasiamu tetap terjaga.</em></p>
+            
+            <div class="story-container">
+                <h2>Bab 1: Bayangan yang Tersisa</h2>
+                <p>
+                    Cerita dimulai dengan tragedi yang menimpa keluarga Kazuhiko. 
+                    Kori, sebagai saksi dari kehancuran keluarganya, kehilangan segala sesuatu yang ia cintai. 
+                    Ini menciptakan latar belakang yang kelam dan emosional bagi Kori. 
+                    Di sini, kita melihat Kori sebagai seorang anak yang tumbuh dengan rasa kehilangan dan kebencian terhadap sihir, 
+                    yang menjadi penyebab kehancuran keluarganya. 
+                    Alur ini mengarah pada pembentukan karakter Kori sebagai seseorang yang tertekan dan terluka, 
+                    tetapi dengan potensi tersembunyi yang masih belum terbangkitkan.
+                </p>
+                <button class="story-btn" onclick="showPopup()">Selengkapnya</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pop-up Box -->
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Admin sedang malas bikin cerita</p>
+            <button class="ok-btn" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.about-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function showPopup() {
+            document.getElementById("popup").classList.add("active");
+            document.getElementById("overlay").classList.add("active");
+        }
+
+        function closePopup() {
+            document.getElementById("popup").classList.remove("active");
+            document.getElementById("overlay").classList.remove("active");
+        }
+    </script>
+
+    </style>
+</body>
+</html>
